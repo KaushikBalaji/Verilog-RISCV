@@ -1,0 +1,7 @@
+0.7
+2020.2
+Nov  8 2024
+22:36:55
+/home/kaushik/data/Vivado/Projects/RISCV/RISCV.sim/sim_1/behav/xsim/glbl.v,1724786425,verilog,,,,glbl,,,,,,,,
+/home/kaushik/data/Vivado/Projects/RISCV/rtl/pc.v,1760902983,verilog,,/home/kaushik/data/Vivado/Projects/RISCV/tb/test_tb.v,,pc,,,,,,,,
+/home/kaushik/data/Vivado/Projects/RISCV/tb/test_tb.v,1760903740,verilog,,,,pc_tb,,,,,,,,
