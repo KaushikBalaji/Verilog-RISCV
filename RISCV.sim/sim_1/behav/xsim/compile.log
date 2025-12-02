@@ -1,6 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/Projects/RISCV/rtl/instr_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module instr_mem
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/Projects/RISCV/rtl/pc.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module pc
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/Projects/RISCV/tb/test_tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module pc_tb
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/Projects/RISCV/RISCV.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/Projects/RISCV/RISCV.srcs/sim_1/new/test_instr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_instr

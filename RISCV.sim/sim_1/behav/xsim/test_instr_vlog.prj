@@ -1,7 +1,8 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
+"../../../../rtl/instr_memory.v" \
 "../../../../rtl/pc.v" \
-"../../../../tb/test_tb.v" \
+"../../../../RISCV.srcs/sim_1/new/test_instr.v" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"

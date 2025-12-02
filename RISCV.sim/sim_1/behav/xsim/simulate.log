@@ -1,2 +1,13 @@
 Time resolution is 1 ps
-$finish called at time : 60 ns : File "/home/kaushik/data/Vivado/Projects/RISCV/tb/test_tb.v" Line 27
+Loading hex file
+PC=00000000	Instruction=05000293
+PC=00000004	Instruction=0002ae03
+PC=00000008	Instruction=05400313
+PC=0000000c	Instruction=00000393
+PC=00000010	Instruction=00200393
+PC=00000014	Instruction=00000513
+PC=00000018	Instruction=03c3da63
+PC=0000001c	Instruction=00032583
+PC=00000020	Instruction=00430313
+PC=00000024	Instruction=0005ca63
+$finish called at time : 110 ns : File "/home/kaushik/data/Vivado/Projects/RISCV/RISCV.srcs/sim_1/new/test_instr.v" Line 32

@@ -13,8 +13,4 @@ module pc(input wire clk,
             pc_out <= pc_out;
     end
 endmodule
-    
-    
-    
-    
-    
+        
