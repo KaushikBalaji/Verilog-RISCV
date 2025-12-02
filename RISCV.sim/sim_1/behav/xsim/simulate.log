@@ -1,13 +1,61 @@
 Time resolution is 1 ps
-Loading hex file
-PC=00000000	Instruction=05000293
-PC=00000004	Instruction=0002ae03
-PC=00000008	Instruction=05400313
-PC=0000000c	Instruction=00000393
-PC=00000010	Instruction=00200393
-PC=00000014	Instruction=00000513
-PC=00000018	Instruction=03c3da63
-PC=0000001c	Instruction=00032583
-PC=00000020	Instruction=00430313
-PC=00000024	Instruction=0005ca63
-$finish called at time : 110 ns : File "/home/kaushik/data/Vivado/Projects/RISCV/RISCV.srcs/sim_1/new/test_instr.v" Line 32
+Loading hex file ...
+Finished loading hex. First words:
+ mem[0] = 05000293
+ mem[1] = 0002ae03
+ mem[2] = 05400313
+ mem[3] = 00000393
+ mem[4] = 00200393
+ mem[5] = 00000513
+ mem[6] = 03c3da63
+ mem[7] = 00032583
+ mem[8] = 00430313
+ mem[9] = 0005ca63
+ mem[10] = 0275ef33
+ mem[11] = 000f0a63
+ mem[12] = 00138393
+ mem[13] = fe5ff06f
+ mem[14] = 00138393
+ mem[15] = fddff06f
+Time=30000 PC=00000004 Instruction=0002ae03 opcode=03 rd=28 rs1=5 rs2=0 imm=00000000 alu_op=00 regw=1 memr=1 memw=0 branch=0 jump=0
+Time=40000 PC=00000008 Instruction=05400313 opcode=13 rd=6 rs1=0 rs2=20 imm=00000054 alu_op=00 regw=1 memr=0 memw=0 branch=0 jump=0
+Time=50000 PC=0000000c Instruction=00000393 opcode=13 rd=7 rs1=0 rs2=0 imm=00000000 alu_op=00 regw=1 memr=0 memw=0 branch=0 jump=0
+Time=60000 PC=00000010 Instruction=00200393 opcode=13 rd=7 rs1=0 rs2=2 imm=00000002 alu_op=00 regw=1 memr=0 memw=0 branch=0 jump=0
+Time=70000 PC=00000014 Instruction=00000513 opcode=13 rd=10 rs1=0 rs2=0 imm=00000000 alu_op=00 regw=1 memr=0 memw=0 branch=0 jump=0
+Time=80000 PC=00000018 Instruction=03c3da63 opcode=63 rd=20 rs1=7 rs2=28 imm=00000034 alu_op=08 regw=0 memr=0 memw=0 branch=1 jump=0
+Time=90000 PC=0000001c Instruction=00032583 opcode=03 rd=11 rs1=6 rs2=0 imm=00000000 alu_op=00 regw=1 memr=1 memw=0 branch=0 jump=0
+Time=100000 PC=00000020 Instruction=00430313 opcode=13 rd=6 rs1=6 rs2=4 imm=00000004 alu_op=00 regw=1 memr=0 memw=0 branch=0 jump=0
+Time=110000 PC=00000024 Instruction=0005ca63 opcode=63 rd=20 rs1=11 rs2=0 imm=00000014 alu_op=08 regw=0 memr=0 memw=0 branch=1 jump=0
+Time=120000 PC=00000028 Instruction=0275ef33 opcode=33 rd=30 rs1=11 rs2=7 imm=00000000 alu_op=12 regw=1 memr=0 memw=0 branch=0 jump=0
+Time=130000 PC=0000002c Instruction=000f0a63 opcode=63 rd=20 rs1=30 rs2=0 imm=00000014 alu_op=01 regw=0 memr=0 memw=0 branch=1 jump=0
+Time=140000 PC=00000030 Instruction=00138393 opcode=13 rd=7 rs1=7 rs2=1 imm=00000001 alu_op=00 regw=1 memr=0 memw=0 branch=0 jump=0
+Time=150000 PC=00000034 Instruction=fe5ff06f opcode=6f rd=0 rs1=31 rs2=5 imm=ffffffe4 alu_op=0b regw=1 memr=0 memw=0 branch=0 jump=1
+Time=160000 PC=00000038 Instruction=00138393 opcode=13 rd=7 rs1=7 rs2=1 imm=00000001 alu_op=00 regw=1 memr=0 memw=0 branch=0 jump=0
+Time=170000 PC=0000003c Instruction=fddff06f opcode=6f rd=0 rs1=31 rs2=29 imm=ffffffdc alu_op=0b regw=1 memr=0 memw=0 branch=0 jump=1
+Time=180000 PC=00000040 Instruction=00150513 opcode=13 rd=10 rs1=10 rs2=1 imm=00000001 alu_op=00 regw=1 memr=0 memw=0 branch=0 jump=0
+Time=190000 PC=00000044 Instruction=00138393 opcode=13 rd=7 rs1=7 rs2=1 imm=00000001 alu_op=00 regw=1 memr=0 memw=0 branch=0 jump=0
+Time=200000 PC=00000048 Instruction=fd1ff06f opcode=6f rd=0 rs1=31 rs2=17 imm=ffffffd0 alu_op=0b regw=1 memr=0 memw=0 branch=0 jump=1
+Time=210000 PC=0000004c Instruction=0000006f opcode=6f rd=0 rs1=0 rs2=0 imm=00000000 alu_op=0b regw=1 memr=0 memw=0 branch=0 jump=1
+Time=220000 PC=00000050 Instruction=00000005 opcode=05 rd=0 rs1=0 rs2=0 imm=00000000 alu_op=00 regw=0 memr=0 memw=0 branch=0 jump=0
+Time=230000 PC=00000054 Instruction=00000002 opcode=02 rd=0 rs1=0 rs2=0 imm=00000000 alu_op=00 regw=0 memr=0 memw=0 branch=0 jump=0
+Time=240000 PC=00000058 Instruction=00000001 opcode=01 rd=0 rs1=0 rs2=0 imm=00000000 alu_op=00 regw=0 memr=0 memw=0 branch=0 jump=0
+Time=250000 PC=0000005c Instruction=00000007 opcode=07 rd=0 rs1=0 rs2=0 imm=00000000 alu_op=00 regw=0 memr=0 memw=0 branch=0 jump=0
+Time=260000 PC=00000060 Instruction=00000005 opcode=05 rd=0 rs1=0 rs2=0 imm=00000000 alu_op=00 regw=0 memr=0 memw=0 branch=0 jump=0
+Time=270000 PC=00000064 Instruction=00000003 opcode=03 rd=0 rs1=0 rs2=0 imm=00000000 alu_op=00 regw=1 memr=1 memw=0 branch=0 jump=0
+Time=280000 PC=00000068 Instruction=xxxxxxxx opcode=xx rd=x rs1=x rs2=x imm=00000000 alu_op=00 regw=0 memr=0 memw=0 branch=0 jump=0
+Time=290000 PC=0000006c Instruction=00000000 opcode=00 rd=0 rs1=0 rs2=0 imm=00000000 alu_op=00 regw=0 memr=0 memw=0 branch=0 jump=0
+Time=300000 PC=00000070 Instruction=00000000 opcode=00 rd=0 rs1=0 rs2=0 imm=00000000 alu_op=00 regw=0 memr=0 memw=0 branch=0 jump=0
+Time=310000 PC=00000074 Instruction=00000000 opcode=00 rd=0 rs1=0 rs2=0 imm=00000000 alu_op=00 regw=0 memr=0 memw=0 branch=0 jump=0
+Time=320000 PC=00000078 Instruction=00000000 opcode=00 rd=0 rs1=0 rs2=0 imm=00000000 alu_op=00 regw=0 memr=0 memw=0 branch=0 jump=0
+Time=330000 PC=0000007c Instruction=00000000 opcode=00 rd=0 rs1=0 rs2=0 imm=00000000 alu_op=00 regw=0 memr=0 memw=0 branch=0 jump=0
+Time=340000 PC=00000080 Instruction=00000000 opcode=00 rd=0 rs1=0 rs2=0 imm=00000000 alu_op=00 regw=0 memr=0 memw=0 branch=0 jump=0
+Time=350000 PC=00000084 Instruction=00000000 opcode=00 rd=0 rs1=0 rs2=0 imm=00000000 alu_op=00 regw=0 memr=0 memw=0 branch=0 jump=0
+Time=360000 PC=00000088 Instruction=00000000 opcode=00 rd=0 rs1=0 rs2=0 imm=00000000 alu_op=00 regw=0 memr=0 memw=0 branch=0 jump=0
+Time=370000 PC=0000008c Instruction=00000000 opcode=00 rd=0 rs1=0 rs2=0 imm=00000000 alu_op=00 regw=0 memr=0 memw=0 branch=0 jump=0
+Time=380000 PC=00000090 Instruction=00000000 opcode=00 rd=0 rs1=0 rs2=0 imm=00000000 alu_op=00 regw=0 memr=0 memw=0 branch=0 jump=0
+Time=390000 PC=00000094 Instruction=00000000 opcode=00 rd=0 rs1=0 rs2=0 imm=00000000 alu_op=00 regw=0 memr=0 memw=0 branch=0 jump=0
+Time=400000 PC=00000098 Instruction=00000000 opcode=00 rd=0 rs1=0 rs2=0 imm=00000000 alu_op=00 regw=0 memr=0 memw=0 branch=0 jump=0
+Time=410000 PC=0000009c Instruction=00000000 opcode=00 rd=0 rs1=0 rs2=0 imm=00000000 alu_op=00 regw=0 memr=0 memw=0 branch=0 jump=0
+Time=420000 PC=000000a0 Instruction=00000000 opcode=00 rd=0 rs1=0 rs2=0 imm=00000000 alu_op=00 regw=0 memr=0 memw=0 branch=0 jump=0
+Finished testbench
+$finish called at time : 420 ns : File "/home/kaushik/data/Vivado/Projects/RISCV/RISCV.srcs/sim_1/new/test_ID.v" Line 76

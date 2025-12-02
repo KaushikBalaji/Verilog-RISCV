@@ -1,7 +1,13 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
+"../../../../RISCV.srcs/sources_1/new/ID_decoder.v" \
 "../../../../rtl/instr_memory.v" \
 "../../../../rtl/pc.v" \
+"../../../../RISCV.srcs/sources_1/new/ID_top.v" \
+"../../../../RISCV.srcs/sources_1/new/regfile.v" \
+"../../../../RISCV.srcs/sources_1/new/top.v" \
+"../../../../rtl/main_cpu.v" \
+"../../../../RISCV.srcs/sim_1/new/test_ID.v" \
 "../../../../RISCV.srcs/sim_1/new/test_instr.v" \
 
 # compile glbl module
