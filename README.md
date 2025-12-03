@@ -1,4 +1,4 @@
-**To load an assembly to the processor, make it to .hex**
+# To load an assembly to the processor, make it to .hex
 
 ```bash
 riscv-none-elf-objcopy -O binary 1-even.elf 1-even.bin
