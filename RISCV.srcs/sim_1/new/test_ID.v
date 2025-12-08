@@ -1,4 +1,4 @@
-// tb_id_stage.v
+// tb_id_stage
 `timescale 1ns/1ps
 
 module test_ID;
@@ -25,6 +25,7 @@ module test_ID;
     wire is_branch;
     wire is_jump;
     wire [1:0] wb_sel;
+    wire [31:0] rs1_data, rs2_data;
 
     ID_top dut (
         .clk(clk),
@@ -47,7 +48,9 @@ module test_ID;
         .mem_write(mem_write),
         .is_branch(is_branch),
         .is_jump(is_jump),
-        .wb_sel(wb_sel)
+        .wb_sel(wb_sel),
+        .rs1_data(rs1_data),
+        .rs2_data(rs2_data)
     );
 
     // clk gen
@@ -57,23 +60,21 @@ module test_ID;
     end
 
     initial begin
-        // initial values
-        reset = 1;
-        pc_write = 1;
-        next_pc = 32'h00000000;
-        #20;
-        reset = 0;
-
-        // run for N instructions
-        repeat (40) begin
-            next_pc = pc_out + 4;
-            #10; // one clock period (pos edge occurs at each #5)
-            $display("Time=%0t PC=%08h Instruction=%08h opcode=%02h rd=%0d rs1=%0d rs2=%0d imm=%08h alu_op=%02h regw=%b memr=%b memw=%b branch=%b jump=%b",
-                     $time, pc_out, instr, opcode, rd, rs1, rs2, imm, alu_op, reg_write, mem_read, mem_write, is_branch, is_jump);
+            reset = 1;
+            pc_write = 1;
+            next_pc = 32'h00000000;
+            #20;
+            reset = 0;
+    
+            repeat (40) begin
+                next_pc = pc_out + 4;
+                #10;
+                $display("Time=%0t PC=%08h Instr=%08h opcode=%02h rd=%0d rs1=%0d rs2=%0d rs1_data=%08h rs2_data=%08h imm=%08h alu_op=%02h regw=%b memr=%b memw=%b branch=%b jump=%b",
+                         $time, pc_out, instr, opcode, rd, rs1, rs2, rs1_data, rs2_data, imm, alu_op, reg_write, mem_read, mem_write, is_branch, is_jump);
+            end
+    
+            $display("Finished testbench");
+            $finish;
         end
-
-        $display("Finished testbench");
-        $finish;
-    end
 
 endmodule

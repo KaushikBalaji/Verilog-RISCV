@@ -1,26 +1,35 @@
 // simple 32x32 register file
 module regfile(
-    input wire clk,
-    input wire we,                 // write enable (synchronous)
-    input wire [4:0] waddr,
-    input wire [31:0] wdata,
-    input wire [4:0] raddr1,
-    input wire [4:0] raddr2,
-    output wire [31:0] rdata1,
-    output wire [31:0] rdata2
+	input clk, input reset,
+	input reg_write,
+	input wire[4:0] rd,
+	input wire[4:0] rs1,
+	input wire[4:0] rs2,
+	input wire[31:0] write_data,
+	output wire[31:0] rs1_data,
+	output wire[31:0] rs2_data 
 );
-    reg [31:0] regs [0:31];
-    integer i;
-    initial begin
-        for (i=0; i<32; i=i+1) regs[i] = 32'b0;
-    end
-
-    // synchronous write on rising edge
-    always @(posedge clk) begin
-        if (we && (waddr != 5'b0)) regs[waddr] <= wdata; // x0 is hardwired zero
-    end
-
-    // combinational read ports
-    assign rdata1 = (raddr1 == 5'b0) ? 32'b0 : regs[raddr1];
-    assign rdata2 = (raddr2 == 5'b0) ? 32'b0 : regs[raddr2];
+	reg[31:0] regfile[0:31];
+	integer i;
+	
+	initial begin
+		for(i=0;i<32;i=i+1) begin
+			regfile[i] <= 32'b0;
+		end
+	end
+	
+	assign rs1_data = (rs1 == 0) ? 32'b0 : regfile[rs1];
+	assign rs2_data = (rs2 == 0) ? 32'b0 : regfile[rs2];
+	
+	always @(posedge clk) begin
+		if(reset) begin
+			 for(i=0;i<32;i=i+1) begin
+					regfile[i] <= 32'b0;
+				end
+		end
+		
+		else if(reg_write && rd != 0)
+			regfile[rd] <= write_data;
+	end
+	 
 endmodule
