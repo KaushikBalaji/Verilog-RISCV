@@ -1,4 +1,6 @@
 // simple 32x32 register file
+`timescale 1ns/1ps
+
 module regfile(
 	input clk, input reset,
 	input reg_write,

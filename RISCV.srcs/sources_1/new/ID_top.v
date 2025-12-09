@@ -1,4 +1,6 @@
 // id_stage_top.v
+`timescale 1ns/1ps
+
 module ID_top(
 	input wire clk,
     	input wire reset,

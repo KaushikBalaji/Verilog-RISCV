@@ -1,0 +1,50 @@
+Time resolution is 1 ps
+Loading hex file ...
+Finished loading hex. First words:
+ mem[0] = 05000293
+ mem[1] = 0002ae03
+ mem[2] = 05400313
+ mem[3] = 00000393
+ mem[4] = 00200393
+ mem[5] = 00000513
+ mem[6] = 03c3da63
+ mem[7] = 00032583
+ mem[8] = 00430313
+ mem[9] = 0005ca63
+ mem[10] = 0275ef33
+ mem[11] = 000f0a63
+ mem[12] = 00138393
+ mem[13] = fe5ff06f
+ mem[14] = 00138393
+ mem[15] = fddff06f
+ mem[16] = 00150513
+ mem[17] = 00138393
+ mem[18] = fd1ff06f
+ mem[19] = 0000006f
+ mem[20] = 00000005
+ mem[21] = 00000002
+ mem[22] = 00000001
+ mem[23] = 00000007
+ mem[24] = 00000005
+ mem[25] = 00000003
+ mem[26] = 00000000
+T=30000 PC=00000004 Instr=0002ae03 opcode=03 rd=28 rs1=5 rs2=0 imm=00000000
+    rs1_data=00000000 rs2_data=00000000 alu_result=00000000 taken=0 target=00000004
+
+T=40000 PC=00000008 Instr=05400313 opcode=13 rd=6 rs1=0 rs2=20 imm=00000054
+    rs1_data=00000000 rs2_data=00000000 alu_result=00000054 taken=0 target=0000005c
+
+T=50000 PC=0000000c Instr=00000393 opcode=13 rd=7 rs1=0 rs2=0 imm=00000000
+    rs1_data=00000000 rs2_data=00000000 alu_result=00000000 taken=0 target=0000000c
+
+T=60000 PC=00000010 Instr=00200393 opcode=13 rd=7 rs1=0 rs2=2 imm=00000002
+    rs1_data=00000000 rs2_data=00000000 alu_result=00000002 taken=0 target=00000012
+
+T=70000 PC=00000014 Instr=00000513 opcode=13 rd=10 rs1=0 rs2=0 imm=00000000
+    rs1_data=00000000 rs2_data=00000000 alu_result=00000000 taken=0 target=00000014
+
+T=80000 PC=00000018 Instr=03c3da63 opcode=63 rd=20 rs1=7 rs2=28 imm=00000034
+    rs1_data=00000000 rs2_data=00000000 alu_result=00000000 taken=1 target=0000004c
+
+HALT encountered at PC=0000004c
+$finish called at time : 90 ns : File "/home/kaushik/data/Vivado/Projects/RISCV/RISCV.srcs/sim_1/new/test_EX.v" Line 165
