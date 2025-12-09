@@ -29,7 +29,7 @@ module alu(
 			5'b10000: result = $signed(a) / $signed(b); // DIV
 			5'b10001: result = a / b; // DIVU
 			5'b10010: result = $signed(a) % $signed(b); // REM
-            5'b10011: result = a % b; // REMU
+            		5'b10011: result = a % b; // REMU
 
             default:   result = 32'hdeadbeef; // illegal alu_op
 		endcase	
