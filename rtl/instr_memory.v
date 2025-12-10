@@ -11,7 +11,7 @@ module instr_mem(input wire[31:0] addr,
         for (i = 0; i < 2048; i = i + 1) begin
             mem[i] = 32'b0;
         end
-        $display("Loading hex file ...");
+        $display("Loading hex file ... INSTR mem module");
         $readmemh("1-even.hex", mem);
         
         $display("Finished loading hex. First words:");

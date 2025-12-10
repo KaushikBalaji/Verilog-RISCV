@@ -17,7 +17,7 @@ module data_mem #(parameter mem_size = 2048)(
 			mem[i] = 32'b0;
 		end
 
-		$display("Loading hex file ...");
+		$display("Loading hex file ...DATA mem module");
 		$readmemh("1-even.hex", mem);
 		
 		$display("Finished loading hex. First words:");
