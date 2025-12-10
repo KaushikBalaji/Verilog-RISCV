@@ -8,7 +8,8 @@ module ID_top(
     	input wire [31:0] next_pc,
     	output wire [31:0] pc_out,
     	output wire [31:0] instr,
-    // expose some decode outputs for checking
+    	
+	// expose some decode outputs for checking
 	output wire [6:0]  opcode,
 	output wire [4:0]  rd,
 	output wire [4:0]  rs1,

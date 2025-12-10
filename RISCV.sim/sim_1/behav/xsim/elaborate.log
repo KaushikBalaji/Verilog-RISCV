@@ -1,7 +1,7 @@
 Vivado Simulator v2024.2.0
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: /home/kaushik/data/Vivado/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_EX_behav xil_defaultlib.test_EX xil_defaultlib.glbl -log elaborate.log 
+Running: /home/kaushik/data/Vivado/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_main_cpu_behav xil_defaultlib.test_main_cpu xil_defaultlib.glbl -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
@@ -13,10 +13,12 @@ Compiling module xil_defaultlib.pc
 Compiling module xil_defaultlib.instr_mem
 Compiling module xil_defaultlib.instr_decode
 Compiling module xil_defaultlib.regfile
-Compiling module xil_defaultlib.ID_top
 Compiling module xil_defaultlib.alu
 Compiling module xil_defaultlib.branch_op
 Compiling module xil_defaultlib.EX_top
-Compiling module xil_defaultlib.test_EX
+Compiling module xil_defaultlib.data_mem
+Compiling module xil_defaultlib.MEM_top
+Compiling module xil_defaultlib.main_cpu
+Compiling module xil_defaultlib.test_main_cpu
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot test_EX_behav
+Built simulation snapshot test_main_cpu_behav
