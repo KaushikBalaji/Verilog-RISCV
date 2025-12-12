@@ -170,17 +170,62 @@ module main_cpu(
 
 
 	// ============================================================
-	// EX STAGE
+	// EX STAGE (with forwarding added)
 	// ============================================================
 
+	// ---------- Forwarding Wires ----------
+	wire [1:0] ForwardA, ForwardB;
+
+	// forwarded ALU operands
+	reg [31:0] EX_rs1_fwd;
+	reg [31:0] EX_rs2_fwd;
+
+	// ---------- Forwarding Unit ----------
+	forwarding_unit FU_inst(
+		.ID_EX_rs1(ID_EX_rs1_addr),
+		.ID_EX_rs2(ID_EX_rs2_addr),
+
+		.EX_MEM_reg_write(EX_MEM_reg_write),
+		.EX_MEM_rd(EX_MEM_rd),
+
+		.MEM_WB_reg_write(MEM_WB_reg_write),
+		.MEM_WB_rd(MEM_WB_rd),
+
+		.forwardA(ForwardA),
+		.forwardB(ForwardB)
+	);
+
+
+	// ---------- Forwarding Muxes ----------
+	always @(*) begin
+
+	// Forwarding for RS1
+	case (ForwardA)
+		2'b00: EX_rs1_fwd = ID_EX_rs1;    // from ID/EX
+		2'b01: EX_rs1_fwd = EX_MEM_alu;   // from EX/MEM
+		2'b10: EX_rs1_fwd = WB_data;      // from MEM/WB
+		default: EX_rs1_fwd = ID_EX_rs1;
+	endcase
+
+	// Forwarding for RS2
+	case (ForwardB)
+		2'b00: EX_rs2_fwd = ID_EX_rs2;
+		2'b01: EX_rs2_fwd = EX_MEM_alu;
+		2'b10: EX_rs2_fwd = WB_data;
+		default: EX_rs2_fwd = ID_EX_rs2;
+	endcase
+	end
+
+
+	// ---------- EX Top ----------
 	wire [31:0] EX_alu_result;
 	wire EX_branch_taken;
 	wire [31:0] EX_branch_target;
 
 	EX_top EX_inst(
 		.pc(ID_EX_pc),
-		.rs1_data(ID_EX_rs1),
-		.rs2_data(ID_EX_rs2),
+		.rs1_data(EX_rs1_fwd),
+		.rs2_data(EX_rs2_fwd),
 		.imm(ID_EX_imm),
 		.alu_op(ID_EX_alu_op),
 		.alu_src(ID_EX_alu_src),
@@ -194,6 +239,7 @@ module main_cpu(
 	);
 
 
+
 	// ============================================================
 	// EX/MEM PIPELINE REGISTER
 	// ============================================================
@@ -201,9 +247,9 @@ module main_cpu(
 	wire [31:0] EX_MEM_pc, EX_MEM_rs2, EX_MEM_alu, EX_MEM_branch_target;
 	wire EX_MEM_taken, EX_MEM_is_branch, EX_MEM_is_jump;
 	wire EX_MEM_mem_read, EX_MEM_mem_write;
-	wire [1:0]  EX_MEM_wb_sel;
+	wire [1:0] EX_MEM_wb_sel;
 	wire EX_MEM_reg_write;
-	wire [4:0]  EX_MEM_rd;
+	wire [4:0] EX_MEM_rd;
 
 	wire EX_MEM_flush = 1'b0;
 	wire EX_MEM_write = 1'b1;
@@ -215,7 +261,7 @@ module main_cpu(
 		.write_enable(EX_MEM_write),
 
 		.pc_in(ID_EX_pc),
-		.rs2_data_in(ID_EX_rs2),
+		.rs2_data_in(EX_rs2_fwd),
 		.alu_result_in(EX_alu_result),
 
 		.branch_target_in(EX_branch_target),
