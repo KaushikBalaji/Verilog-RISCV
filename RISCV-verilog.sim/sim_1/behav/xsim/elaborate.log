@@ -1,0 +1,14 @@
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/kaushik/data/Vivado/Vivado/2024.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_main_cpu_behav xil_defaultlib.test_main_cpu xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 5 for port 'EX_MEM_rd' [/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/RISCV.srcs/sources_1/new/main_cpu.v:190]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 5 for port 'MEM_WB_rd' [/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/RISCV.srcs/sources_1/new/main_cpu.v:193]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 5 for port 'rd_out' [/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/RISCV.srcs/sources_1/new/main_cpu.v:290]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 5 for port 'rd_in' [/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/RISCV.srcs/sources_1/new/main_cpu.v:331]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 5 for port 'rd_out' [/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/RISCV.srcs/sources_1/new/main_cpu.v:337]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel

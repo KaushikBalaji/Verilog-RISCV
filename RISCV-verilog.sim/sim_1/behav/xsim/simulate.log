@@ -1,0 +1,552 @@
+Time resolution is 1 ps
+Loading hex file ... INSTR mem module
+Finished loading hex. First words:
+ mem[0] = 00001297
+ mem[1] = 00028293
+ mem[2] = 0002ae03
+ mem[3] = 00001317
+ mem[4] = ff830313
+ mem[5] = 00000393
+ mem[6] = 00200393
+ mem[7] = 00000513
+ mem[8] = 03c3da63
+ mem[9] = 00032583
+ mem[10] = 00430313
+ mem[11] = 0005ca63
+ mem[12] = 0275ef33
+ mem[13] = 000f0a63
+ mem[14] = 00138393
+ mem[15] = fe5ff06f
+ mem[16] = 00138393
+ mem[17] = fddff06f
+ mem[18] = 00150513
+ mem[19] = 00138393
+ mem[20] = fd1ff06f
+ mem[21] = 0000006f
+Loading hex file ...DATA mem module
+Finished loading hex. First words:
+ mem[0] = 00000005
+ mem[1] = 00000002
+ mem[2] = 00000001
+ mem[3] = 00000007
+ mem[4] = 00000005
+
+==================================================
+ Cycle @ T=30000
+==================================================
+ IF:   pc_out      = 00000004
+       instr       = 00028293
+ IF/ID:
+       pc          = 00000000
+       instr       = 00001297
+ ID:
+       rs1         = 0
+       rs2         = 0
+       rd          = 5
+       imm         = 00001000
+       rs1_data    = 00000000
+       rs2_data    = 00000000
+ ID/EX:
+       pc          = 00000000
+       rs1_data    = 00000000
+       rs2_data    = 00000000
+       imm         = 00000000
+       rd          = 0
+ EX:
+       ALU result  = 00000000
+       branch_taken= 0
+       target      = 00000000
+ EX/MEM:
+       alu         = 00000000
+       rs2_data    = 00000000
+       mem_read    = 0
+       mem_write   = 0
+       rd          = 0
+ MEM:
+       data_out    = xxxxxxxx
+ MEM/WB:
+       alu         = 00000000
+       mem_out     = xxxxxxxx
+       wb_sel      = xx
+ WB:
+       wb_data     = 00000000
+       wb_rd       = 0
+       wb_write    = x
+==================================================
+
+==================================================
+ Cycle @ T=40000
+==================================================
+ IF:   pc_out      = 00000008
+       instr       = 0002ae03
+ IF/ID:
+       pc          = 00000004
+       instr       = 00028293
+ ID:
+       rs1         = 5
+       rs2         = 0
+       rd          = 5
+       imm         = 00000000
+       rs1_data    = 00000000
+       rs2_data    = 00000000
+ ID/EX:
+       pc          = 00000000
+       rs1_data    = 00000000
+       rs2_data    = 00000000
+       imm         = 00001000
+       rd          = 5
+ EX:
+       ALU result  = 00000004
+       branch_taken= 0
+       target      = 00001000
+ EX/MEM:
+       alu         = 00000000
+       rs2_data    = 00000000
+       mem_read    = 0
+       mem_write   = 0
+       rd          = 0
+ MEM:
+       data_out    = xxxxxxxx
+ MEM/WB:
+       alu         = 00000000
+       mem_out     = xxxxxxxx
+       wb_sel      = 00
+ WB:
+       wb_data     = 00000000
+       wb_rd       = 0
+       wb_write    = 0
+==================================================
+
+==================================================
+ Cycle @ T=50000
+==================================================
+ IF:   pc_out      = 0000000c
+       instr       = 00001317
+ IF/ID:
+       pc          = 00000008
+       instr       = 0002ae03
+ ID:
+       rs1         = 5
+       rs2         = 0
+       rd          = 28
+       imm         = 00000000
+       rs1_data    = 00000000
+       rs2_data    = 00000000
+ ID/EX:
+       pc          = 00000004
+       rs1_data    = 00000000
+       rs2_data    = 00000000
+       imm         = 00000000
+       rd          = 5
+ EX:
+       ALU result  = 00000000
+       branch_taken= 0
+       target      = 00000004
+ EX/MEM:
+       alu         = 00000004
+       rs2_data    = 00000000
+       mem_read    = 0
+       mem_write   = 0
+       rd          = 1
+ MEM:
+       data_out    = xxxxxxxx
+ MEM/WB:
+       alu         = 00000000
+       mem_out     = xxxxxxxx
+       wb_sel      = 00
+ WB:
+       wb_data     = 00000000
+       wb_rd       = 0
+       wb_write    = 0
+==================================================
+
+==================================================
+ Cycle @ T=60000
+==================================================
+ IF:   pc_out      = 00000010
+       instr       = ff830313
+ IF/ID:
+       pc          = 0000000c
+       instr       = 00001317
+ ID:
+       rs1         = 0
+       rs2         = 0
+       rd          = 6
+       imm         = 00001000
+       rs1_data    = 00000000
+       rs2_data    = 00000000
+ ID/EX:
+       pc          = 00000008
+       rs1_data    = 00000000
+       rs2_data    = 00000000
+       imm         = 00000000
+       rd          = 28
+ EX:
+       ALU result  = 00000000
+       branch_taken= 0
+       target      = 00000008
+ EX/MEM:
+       alu         = 00000000
+       rs2_data    = 00000000
+       mem_read    = 0
+       mem_write   = 0
+       rd          = 1
+ MEM:
+       data_out    = xxxxxxxx
+ MEM/WB:
+       alu         = 00000004
+       mem_out     = xxxxxxxx
+       wb_sel      = 11
+ WB:
+       wb_data     = 00000004
+       wb_rd       = 1
+       wb_write    = 1
+==================================================
+
+==================================================
+ Cycle @ T=70000
+==================================================
+ IF:   pc_out      = 00000014
+       instr       = 00000393
+ IF/ID:
+       pc          = 00000010
+       instr       = ff830313
+ ID:
+       rs1         = 6
+       rs2         = 24
+       rd          = 6
+       imm         = fffffff8
+       rs1_data    = 00000000
+       rs2_data    = 00000000
+ ID/EX:
+       pc          = 0000000c
+       rs1_data    = 00000000
+       rs2_data    = 00000000
+       imm         = 00001000
+       rd          = 6
+ EX:
+       ALU result  = 00000004
+       branch_taken= 0
+       target      = 0000100c
+ EX/MEM:
+       alu         = 00000000
+       rs2_data    = 00000000
+       mem_read    = 1
+       mem_write   = 0
+       rd          = 0
+ MEM:
+       data_out    = 00000005
+ MEM/WB:
+       alu         = 00000000
+       mem_out     = xxxxxxxx
+       wb_sel      = 00
+ WB:
+       wb_data     = 00000000
+       wb_rd       = 1
+       wb_write    = 1
+==================================================
+
+==================================================
+ Cycle @ T=80000
+==================================================
+ IF:   pc_out      = 00000018
+       instr       = 00200393
+ IF/ID:
+       pc          = 00000014
+       instr       = 00000393
+ ID:
+       rs1         = 0
+       rs2         = 0
+       rd          = 7
+       imm         = 00000000
+       rs1_data    = 00000000
+       rs2_data    = 00000000
+ ID/EX:
+       pc          = 00000010
+       rs1_data    = 00000000
+       rs2_data    = 00000000
+       imm         = fffffff8
+       rd          = 6
+ EX:
+       ALU result  = fffffff8
+       branch_taken= 0
+       target      = 00000008
+ EX/MEM:
+       alu         = 00000004
+       rs2_data    = 00000000
+       mem_read    = 0
+       mem_write   = 0
+       rd          = 0
+ MEM:
+       data_out    = 00000005
+ MEM/WB:
+       alu         = 00000000
+       mem_out     = 00000005
+       wb_sel      = 01
+ WB:
+       wb_data     = 00000005
+       wb_rd       = 0
+       wb_write    = 1
+==================================================
+
+==================================================
+ Cycle @ T=90000
+==================================================
+ IF:   pc_out      = 0000001c
+       instr       = 00000513
+ IF/ID:
+       pc          = 00000018
+       instr       = 00200393
+ ID:
+       rs1         = 0
+       rs2         = 2
+       rd          = 7
+       imm         = 00000002
+       rs1_data    = 00000000
+       rs2_data    = 00000000
+ ID/EX:
+       pc          = 00000014
+       rs1_data    = 00000000
+       rs2_data    = 00000000
+       imm         = 00000000
+       rd          = 7
+ EX:
+       ALU result  = 00000000
+       branch_taken= 0
+       target      = 00000014
+ EX/MEM:
+       alu         = fffffff8
+       rs2_data    = 00000000
+       mem_read    = 0
+       mem_write   = 0
+       rd          = 0
+ MEM:
+       data_out    = 00000005
+ MEM/WB:
+       alu         = 00000004
+       mem_out     = 00000005
+       wb_sel      = 11
+ WB:
+       wb_data     = 00000004
+       wb_rd       = 0
+       wb_write    = 1
+==================================================
+
+==================================================
+ Cycle @ T=100000
+==================================================
+ IF:   pc_out      = 00000020
+       instr       = 03c3da63
+ IF/ID:
+       pc          = 0000001c
+       instr       = 00000513
+ ID:
+       rs1         = 0
+       rs2         = 0
+       rd          = 10
+       imm         = 00000000
+       rs1_data    = 00000000
+       rs2_data    = 00000000
+ ID/EX:
+       pc          = 00000018
+       rs1_data    = 00000000
+       rs2_data    = 00000000
+       imm         = 00000002
+       rd          = 7
+ EX:
+       ALU result  = 00000002
+       branch_taken= 0
+       target      = 0000001a
+ EX/MEM:
+       alu         = 00000000
+       rs2_data    = 00000000
+       mem_read    = 0
+       mem_write   = 0
+       rd          = 1
+ MEM:
+       data_out    = 00000005
+ MEM/WB:
+       alu         = fffffff8
+       mem_out     = 00000005
+       wb_sel      = 00
+ WB:
+       wb_data     = fffffff8
+       wb_rd       = 0
+       wb_write    = 1
+==================================================
+
+==================================================
+ Cycle @ T=110000
+==================================================
+ IF:   pc_out      = 00000024
+       instr       = 00032583
+ IF/ID:
+       pc          = 00000020
+       instr       = 03c3da63
+ ID:
+       rs1         = 7
+       rs2         = 28
+       rd          = 20
+       imm         = 00000034
+       rs1_data    = 00000000
+       rs2_data    = 00000000
+ ID/EX:
+       pc          = 0000001c
+       rs1_data    = 00000000
+       rs2_data    = 00000000
+       imm         = 00000000
+       rd          = 10
+ EX:
+       ALU result  = 00000000
+       branch_taken= 0
+       target      = 0000001c
+ EX/MEM:
+       alu         = 00000002
+       rs2_data    = 00000000
+       mem_read    = 0
+       mem_write   = 0
+       rd          = 1
+ MEM:
+       data_out    = 00000005
+ MEM/WB:
+       alu         = 00000000
+       mem_out     = 00000005
+       wb_sel      = 00
+ WB:
+       wb_data     = 00000000
+       wb_rd       = 1
+       wb_write    = 1
+==================================================
+
+==================================================
+ Cycle @ T=120000
+==================================================
+ IF:   pc_out      = 00000028
+       instr       = 00430313
+ IF/ID:
+       pc          = 00000024
+       instr       = 00032583
+ ID:
+       rs1         = 6
+       rs2         = 0
+       rd          = 11
+       imm         = 00000000
+       rs1_data    = 00000000
+       rs2_data    = 00000000
+ ID/EX:
+       pc          = 00000020
+       rs1_data    = 00000000
+       rs2_data    = 00000000
+       imm         = 00000034
+       rd          = 20
+ EX:
+       ALU result  = 00000000
+       branch_taken= 1
+       target      = 00000054
+ EX/MEM:
+       alu         = 00000000
+       rs2_data    = 00000000
+       mem_read    = 0
+       mem_write   = 0
+       rd          = 0
+ MEM:
+       data_out    = 00000005
+ MEM/WB:
+       alu         = 00000002
+       mem_out     = 00000005
+       wb_sel      = 00
+ WB:
+       wb_data     = 00000002
+       wb_rd       = 1
+       wb_write    = 1
+==================================================
+
+==================================================
+ Cycle @ T=130000
+==================================================
+ IF:   pc_out      = 0000002c
+       instr       = 0005ca63
+ IF/ID:
+       pc          = 00000028
+       instr       = 00430313
+ ID:
+       rs1         = 6
+       rs2         = 4
+       rd          = 6
+       imm         = 00000004
+       rs1_data    = 00000000
+       rs2_data    = 00000000
+ ID/EX:
+       pc          = 00000024
+       rs1_data    = 00000000
+       rs2_data    = 00000000
+       imm         = 00000000
+       rd          = 11
+ EX:
+       ALU result  = 00000000
+       branch_taken= 0
+       target      = 00000024
+ EX/MEM:
+       alu         = 00000000
+       rs2_data    = 00000000
+       mem_read    = 0
+       mem_write   = 0
+       rd          = 0
+ MEM:
+       data_out    = 00000005
+ MEM/WB:
+       alu         = 00000000
+       mem_out     = 00000005
+       wb_sel      = 00
+ WB:
+       wb_data     = 00000000
+       wb_rd       = 0
+       wb_write    = 1
+==================================================
+
+==================================================
+ Cycle @ T=140000
+==================================================
+ IF:   pc_out      = 00000054
+       instr       = 0000006f
+ IF/ID:
+       pc          = 0000002c
+       instr       = 0005ca63
+ ID:
+       rs1         = 11
+       rs2         = 0
+       rd          = 20
+       imm         = 00000014
+       rs1_data    = 00000000
+       rs2_data    = 00000000
+ ID/EX:
+       pc          = 00000028
+       rs1_data    = 00000000
+       rs2_data    = 00000000
+       imm         = 00000004
+       rd          = 6
+ EX:
+       ALU result  = 00000004
+       branch_taken= 0
+       target      = 0000002c
+ EX/MEM:
+       alu         = 00000000
+       rs2_data    = 00000000
+       mem_read    = 1
+       mem_write   = 0
+       rd          = 1
+ MEM:
+       data_out    = 00000005
+ MEM/WB:
+       alu         = 00000000
+       mem_out     = 00000005
+       wb_sel      = 00
+ WB:
+       wb_data     = 00000000
+       wb_rd       = 0
+       wb_write    = 0
+==================================================
+
+====================== HALT ======================
+HALT encountered. PC = 00000058
+$finish called at time : 150 ns : File "/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sim_1/imports/rtl/test_main_cpu.v" Line 32
