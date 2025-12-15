@@ -18,7 +18,6 @@ setup-env.sh
 
 # Vivado junk
 *.jou
-*.log
 *.str
 *.zip
 *.wdb
