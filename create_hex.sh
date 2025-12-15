@@ -44,13 +44,13 @@ echo "==> Generating instr.hex (Verilog)..."
 riscv-none-elf-objcopy -O verilog \
     --verilog-data-width=4 \
     --only-section=.text \
-    "${BASE_NAME}.elf" instr.hex
+    "${BASE_NAME}.elf" ${BASE_NAME}_instr.hex
 
 echo "==> Generating data.hex (Verilog)..."
 riscv-none-elf-objcopy -O verilog \
     --verilog-data-width=4 \
     --only-section=.data \
-    "${BASE_NAME}.elf" data.hex
+    "${BASE_NAME}.elf" ${BASE_NAME}_data.hex
 
 # ============================================================
 # METHOD B — Raw Hex (simple 32-bit words, simulator-safe)
@@ -61,17 +61,17 @@ echo "==> Creating RAW hex from full binary..."
 riscv-none-elf-objcopy -O binary "${BASE_NAME}.elf" "${BASE_NAME}.bin"
 
 echo "==> Full raw dump: full_raw.hex"
-hexdump -ve '1/4 "%08x\n"' "${BASE_NAME}.bin" > full_raw.hex
+hexdump -ve '1/4 "%08x\n"' "${BASE_NAME}.bin" > ${BASE_NAME}_full_raw.hex
 
 # Extract TEXT region only (0x0000–0x0FFF)
 echo "==> instr_raw.hex (raw binary ONLY .text)..."
 dd if="${BASE_NAME}.bin" bs=1 count=$((0x1000)) status=none \
-| hexdump -ve '1/4 "%08x\n"' > instr_raw.hex
+| hexdump -ve '1/4 "%08x\n"' > ${BASE_NAME}_instr_raw.hex
 
 # Extract DATA region (starting at 0x1000)
 echo "==> data_raw.hex (raw binary ONLY .data)..."
 dd if="${BASE_NAME}.bin" bs=1 skip=$((0x1000)) status=none \
-| hexdump -ve '1/4 "%08x\n"' > data_raw.hex
+| hexdump -ve '1/4 "%08x\n"' > ${BASE_NAME}_data_raw.hex
 
 # ============================================================
 

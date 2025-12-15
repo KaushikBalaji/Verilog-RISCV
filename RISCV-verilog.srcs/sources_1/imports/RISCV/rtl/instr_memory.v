@@ -12,7 +12,7 @@ module instr_mem(input wire[31:0] addr,
             mem[i] = 32'b0;
         end
         $display("Loading hex file ... INSTR mem module");
-        $readmemh("instr_raw.hex", mem);
+        $readmemh("2-prime_instr_raw.hex", mem);
 //        if(!read)
 //        	$display("Could not find the 1-even.hex file");
         

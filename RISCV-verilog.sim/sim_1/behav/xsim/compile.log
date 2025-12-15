@@ -1,0 +1,36 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/RISCV.srcs/sources_1/new/EX_MEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EX_MEM
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/RISCV.srcs/sources_1/new/EX_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EX_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/RISCV.srcs/sources_1/new/Forwarding_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module forwarding_unit
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/RISCV.srcs/sources_1/new/ID_EX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ID_EX
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/RISCV.srcs/sources_1/new/ID_decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module instr_decode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/RISCV.srcs/sources_1/new/IF_ID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IF_ID
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/RISCV.srcs/sources_1/new/MEM_WB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MEM_WB
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/RISCV.srcs/sources_1/new/MEM_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MEM_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/RISCV.srcs/sources_1/new/WB_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WB_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/RISCV.srcs/sources_1/new/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/RISCV.srcs/sources_1/new/branch_op.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module branch_op
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/RISCV.srcs/sources_1/new/data_mem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_mem
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/new/hazard_detect.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hazard_detection_unit
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/rtl/instr_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module instr_mem
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/RISCV.srcs/sources_1/new/main_cpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module main_cpu
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/rtl/pc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/RISCV.srcs/sources_1/new/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sim_1/imports/rtl/test_main_cpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_main_cpu

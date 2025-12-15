@@ -12,6 +12,8 @@ module main_cpu(
 	wire [31:0] pc_out;
 	reg  [31:0] next_pc;
 	wire pc_write;    // hazard unit later
+	wire branch_flush;	// for branch flush
+
 
 	pc PC_inst(
 		.clk(clk),
@@ -36,7 +38,7 @@ module main_cpu(
 
 	wire [31:0] IF_ID_pc, IF_ID_instr;
 
-	wire IF_ID_flush = 1'b0;   // later: branch flush
+	wire IF_ID_flush = branch_flush;   // branch flush
 	wire IF_ID_write;   // later: stall
 
 	IF_ID IF_ID_inst(
@@ -124,6 +126,9 @@ module main_cpu(
 	wire [1:0]  ID_EX_wb_sel;
 
 	wire ID_EX_flush;
+	wire ID_EX_flush_final;
+	assign ID_EX_flush_final = ID_EX_flush | branch_flush;
+
 	wire ID_EX_write = 1'b1;
 
 	hazard_detection_unit HDU_inst(
@@ -142,7 +147,7 @@ module main_cpu(
 	ID_EX ID_EX_inst(
 		.clk(clk),
 		.reset(reset),
-		.flush(ID_EX_flush),
+		.flush(ID_EX_flush_final),
 		.write_enable(ID_EX_write),
 
 		.pc_in(IF_ID_pc),
@@ -268,6 +273,8 @@ module main_cpu(
 
 	wire EX_MEM_flush = 1'b0;
 	wire EX_MEM_write = 1'b1;
+
+	assign branch_flush = EX_branch_taken;
 
 	EX_MEM EX_MEM_inst(
 		.clk(clk),

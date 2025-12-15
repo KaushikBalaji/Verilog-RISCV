@@ -18,7 +18,7 @@ module data_mem #(parameter mem_size = 2048)(
 		end
 
 		$display("Loading hex file ...DATA mem module");
-		$readmemh("data_raw.hex", mem);
+		$readmemh("2-prime_data_raw.hex", mem);
 		
 		$display("Finished loading hex. First words:");
 		for (i = 0; i < 5; i = i + 1) $display(" mem[%0d] = %08x", i, mem[i]);
