@@ -1,29 +1,4 @@
 spike/*
 riscv-tools/
 setup-env.sh
-*.pb
-*.sdb
-*.rlx
-*/.Xil/*
-*.Xil
-*.cache
-*.hw
-*.sim
-*.runs
-*.ip_user_files
-*.gen
-*.srcs/sim/*
-*.sim/*
-*.local
 
-# Vivado junk
-*.jou
-*.str
-*.zip
-*.wdb
-*.pb
-*.rpx
-*.dbg
-*.mdl
-*.html
-*.xml
