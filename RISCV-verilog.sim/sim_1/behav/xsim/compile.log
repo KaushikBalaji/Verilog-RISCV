@@ -28,6 +28,8 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/RISCV-ver
 INFO: [VRFC 10-311] analyzing module instr_mem
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/RISCV.srcs/sources_1/new/main_cpu.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module main_cpu
+WARNING: [VRFC 10-2938] 'MEM_WB_reg_write' is already implicitly declared on line 222 [/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/RISCV.srcs/sources_1/new/main_cpu.v:356]
+WARNING: [VRFC 10-2938] 'MEM_WB_rd' is already implicitly declared on line 223 [/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/RISCV.srcs/sources_1/new/main_cpu.v:357]
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/rtl/pc.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module pc
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/kaushik/data/Vivado/RISCV-verilog/RISCV-verilog.srcs/sources_1/imports/RISCV/RISCV.srcs/sources_1/new/regfile.v" into library xil_defaultlib

@@ -209,6 +209,7 @@ module main_cpu(
 	// forwarded ALU operands
 	reg [31:0] EX_rs1_fwd;
 	reg [31:0] EX_rs2_fwd;
+	wire [4:0] EX_MEM_rd;
 
 	// ---------- Forwarding Unit ----------
 	forwarding_unit FU_inst(
@@ -334,7 +335,7 @@ module main_cpu(
 
 	wire [31:0] MEM_data_out;
 
-	MEM_top #(.mem_size(2048)) DMEM_inst(
+	MEM_top DMEM_inst(
 		.clk(clk),
 		.mem_read(EX_MEM_mem_read),
 		.mem_write(EX_MEM_mem_write),

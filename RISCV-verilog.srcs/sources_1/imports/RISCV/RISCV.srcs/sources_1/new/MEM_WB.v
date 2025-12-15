@@ -45,10 +45,14 @@ module MEM_WB(
 			wb_sel_out <= wb_sel_in;
 			mem_size_out <= mem_size_in;
 			mem_signed_out <= mem_signed_in;
+			$display("MEM_WB: rd_in=%0d rd_out=%0d reg_write=%b",
+				rd_in, rd_out, reg_write_out);
 		end
 		else begin
 			// stall, do nothing
 		end
+
+
 
 	end
 

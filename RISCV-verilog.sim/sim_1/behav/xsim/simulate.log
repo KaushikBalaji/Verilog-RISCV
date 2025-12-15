@@ -30,6 +30,7 @@ Finished loading hex. First words:
  mem[2] = 00000000
  mem[3] = 00000000
  mem[4] = 00000000
+MEM_WB: rd_in=0 rd_out=0 reg_write=0
 
 ==================================================
  Cycle @ T=30000
@@ -63,16 +64,17 @@ Finished loading hex. First words:
        mem_write   = 0
        rd          = 0
  MEM:
-       data_out    = xxxxxxxx
+       data_out    = 00000000
  MEM/WB:
        alu         = 00000000
-       mem_out     = xxxxxxxx
-       wb_sel      = xx
+       mem_out     = 00000000
+       wb_sel      = 00
  WB:
        wb_data     = 00000000
        wb_rd       = 0
-       wb_write    = x
+       wb_write    = 0
 ==================================================
+MEM_WB: rd_in=0 rd_out=0 reg_write=0
 
 ==================================================
  Cycle @ T=40000
@@ -106,16 +108,17 @@ Finished loading hex. First words:
        mem_write   = 0
        rd          = 0
  MEM:
-       data_out    = xxxxxxxx
+       data_out    = 00000000
  MEM/WB:
        alu         = 00000000
-       mem_out     = xxxxxxxx
+       mem_out     = 00000000
        wb_sel      = 00
  WB:
        wb_data     = 00000000
        wb_rd       = 0
        wb_write    = 0
 ==================================================
+MEM_WB: rd_in=0 rd_out=0 reg_write=0
 
 ==================================================
  Cycle @ T=50000
@@ -139,7 +142,7 @@ Finished loading hex. First words:
        imm         = 00000000
        rd          = 13
  EX:
-       ALU result  = 00000000
+       ALU result  = 00000004
        branch_taken= 0
        target      = 00000004
  EX/MEM:
@@ -147,18 +150,19 @@ Finished loading hex. First words:
        rs2_data    = 00000000
        mem_read    = 0
        mem_write   = 0
-       rd          = 1
+       rd          = 13
  MEM:
-       data_out    = xxxxxxxx
+       data_out    = 00000000
  MEM/WB:
        alu         = 00000000
-       mem_out     = xxxxxxxx
+       mem_out     = 00000000
        wb_sel      = 00
  WB:
        wb_data     = 00000000
        wb_rd       = 0
        wb_write    = 0
 ==================================================
+MEM_WB: rd_in=13 rd_out=0 reg_write=0
 
 ==================================================
  Cycle @ T=60000
@@ -182,26 +186,27 @@ Finished loading hex. First words:
        imm         = 00000000
        rd          = 11
  EX:
-       ALU result  = 00000000
+       ALU result  = 00000004
        branch_taken= 0
        target      = 00000008
  EX/MEM:
-       alu         = 00000000
+       alu         = 00000004
        rs2_data    = 00000000
        mem_read    = 0
        mem_write   = 0
-       rd          = 1
+       rd          = 13
  MEM:
-       data_out    = xxxxxxxx
+       data_out    = 00000000
  MEM/WB:
        alu         = 00000004
-       mem_out     = xxxxxxxx
+       mem_out     = 00000000
        wb_sel      = 11
  WB:
        wb_data     = 00000004
-       wb_rd       = 1
+       wb_rd       = 13
        wb_write    = 1
 ==================================================
+MEM_WB: rd_in=13 rd_out=13 reg_write=1
 
 ==================================================
  Cycle @ T=70000
@@ -229,22 +234,23 @@ Finished loading hex. First words:
        branch_taken= 0
        target      = 0000000c
  EX/MEM:
-       alu         = 00000000
+       alu         = 00000004
        rs2_data    = 00000000
        mem_read    = 1
        mem_write   = 0
-       rd          = 1
+       rd          = 11
  MEM:
-       data_out    = 0000000a
+       data_out    = 00000000
  MEM/WB:
-       alu         = 00000000
-       mem_out     = xxxxxxxx
+       alu         = 00000004
+       mem_out     = 00000000
        wb_sel      = 00
  WB:
-       wb_data     = 00000000
-       wb_rd       = 1
+       wb_data     = 00000004
+       wb_rd       = 13
        wb_write    = 1
 ==================================================
+MEM_WB: rd_in=11 rd_out=13 reg_write=1
 
 ==================================================
  Cycle @ T=80000
@@ -276,18 +282,19 @@ Finished loading hex. First words:
        rs2_data    = 00000000
        mem_read    = 0
        mem_write   = 0
-       rd          = 0
+       rd          = 10
  MEM:
-       data_out    = 0000000a
+       data_out    = 00000000
  MEM/WB:
-       alu         = 00000000
-       mem_out     = 0000000a
+       alu         = 00000004
+       mem_out     = 00000000
        wb_sel      = 01
  WB:
-       wb_data     = 0000000a
-       wb_rd       = 1
+       wb_data     = 00000000
+       wb_rd       = 11
        wb_write    = 1
 ==================================================
+MEM_WB: rd_in=10 rd_out=11 reg_write=1
 
 ==================================================
  Cycle @ T=90000
@@ -319,18 +326,19 @@ Finished loading hex. First words:
        rs2_data    = 00000000
        mem_read    = 0
        mem_write   = 0
-       rd          = 0
+       rd          = 28
  MEM:
-       data_out    = 0000000a
+       data_out    = 00000000
  MEM/WB:
        alu         = 00000000
-       mem_out     = 0000000a
+       mem_out     = 00000000
        wb_sel      = 00
  WB:
        wb_data     = 00000000
-       wb_rd       = 0
+       wb_rd       = 10
        wb_write    = 1
 ==================================================
+MEM_WB: rd_in=28 rd_out=10 reg_write=1
 
 ==================================================
  Cycle @ T=100000
@@ -362,18 +370,19 @@ Finished loading hex. First words:
        rs2_data    = 00000000
        mem_read    = 0
        mem_write   = 0
-       rd          = 0
+       rd          = 6
  MEM:
-       data_out    = 0000000a
+       data_out    = 00000000
  MEM/WB:
        alu         = 00000003
-       mem_out     = 0000000a
+       mem_out     = 00000000
        wb_sel      = 00
  WB:
        wb_data     = 00000003
-       wb_rd       = 0
+       wb_rd       = 28
        wb_write    = 1
 ==================================================
+MEM_WB: rd_in=6 rd_out=28 reg_write=1
 
 ==================================================
  Cycle @ T=110000
@@ -391,32 +400,33 @@ Finished loading hex. First words:
        rs1_data    = 00000000
        rs2_data    = 00000000
  ID/EX:
-       pc          = 00000000
+       pc          = 0000001c
        rs1_data    = 00000000
        rs2_data    = 00000000
-       imm         = 00000000
-       rd          = 0
+       imm         = 00000028
+       rd          = 8
  EX:
-       ALU result  = 00000000
+       ALU result  = fffffffe
        branch_taken= 0
-       target      = 00000000
+       target      = 00000044
  EX/MEM:
        alu         = 00000000
        rs2_data    = 00000000
        mem_read    = 0
        mem_write   = 0
-       rd          = 0
+       rd          = 20
  MEM:
-       data_out    = 0000000a
+       data_out    = 00000000
  MEM/WB:
        alu         = 00000002
-       mem_out     = 0000000a
+       mem_out     = 00000000
        wb_sel      = 00
  WB:
        wb_data     = 00000002
-       wb_rd       = 0
+       wb_rd       = 6
        wb_write    = 1
 ==================================================
+MEM_WB: rd_in=20 rd_out=6 reg_write=1
 
 ==================================================
  Cycle @ T=120000
@@ -432,7 +442,7 @@ Finished loading hex. First words:
        rd          = 30
        imm         = 00000000
        rs1_data    = 00000000
-       rs2_data    = 00000000
+       rs2_data    = 00000002
  ID/EX:
        pc          = 00000000
        rs1_data    = 00000000
@@ -444,22 +454,23 @@ Finished loading hex. First words:
        branch_taken= 0
        target      = 00000000
  EX/MEM:
-       alu         = 00000000
-       rs2_data    = 00000000
+       alu         = fffffffe
+       rs2_data    = 00000002
        mem_read    = 0
        mem_write   = 0
-       rd          = 0
+       rd          = 8
  MEM:
-       data_out    = 0000000a
+       data_out    = 00000000
  MEM/WB:
        alu         = 00000000
-       mem_out     = 0000000a
+       mem_out     = 00000000
        wb_sel      = 00
  WB:
        wb_data     = 00000000
-       wb_rd       = 0
+       wb_rd       = 20
        wb_write    = 0
 ==================================================
+MEM_WB: rd_in=8 rd_out=20 reg_write=0
 
 ==================================================
  Cycle @ T=130000
@@ -479,11 +490,11 @@ Finished loading hex. First words:
  ID/EX:
        pc          = 00000024
        rs1_data    = 00000000
-       rs2_data    = 00000000
+       rs2_data    = 00000002
        imm         = 00000000
        rd          = 30
  EX:
-       ALU result  = xxxxxxxx
+       ALU result  = 00000000
        branch_taken= 0
        target      = 00000024
  EX/MEM:
@@ -493,16 +504,17 @@ Finished loading hex. First words:
        mem_write   = 0
        rd          = 0
  MEM:
-       data_out    = 0000000a
+       data_out    = 00000000
  MEM/WB:
-       alu         = 00000000
-       mem_out     = 0000000a
+       alu         = fffffffe
+       mem_out     = 00000000
        wb_sel      = 00
  WB:
-       wb_data     = 00000000
-       wb_rd       = 0
+       wb_data     = fffffffe
+       wb_rd       = 8
        wb_write    = 0
 ==================================================
+MEM_WB: rd_in=0 rd_out=8 reg_write=0
 
 ====================== HALT ======================
 HALT encountered. PC = 00000054
