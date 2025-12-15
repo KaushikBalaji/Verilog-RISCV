@@ -68,6 +68,9 @@ module main_cpu(
 	wire ID_is_branch, ID_is_jump;
 	wire [1:0] ID_wb_sel;
 
+	wire [1:0] ID_mem_size;
+	wire ID_mem_signed;
+
 	wire [31:0] ID_rs1_data, ID_rs2_data;
 	wire [4:0] IF_ID_rs1 = IF_ID_instr[19:15];
 	wire [4:0] IF_ID_rs2 = IF_ID_instr[24:20];
@@ -90,8 +93,8 @@ module main_cpu(
 		.is_branch(ID_is_branch),
 		.is_jump(ID_is_jump),
 		.wb_sel(ID_wb_sel),
-		.mem_size(),
-		.mem_signed(),
+		.mem_size(ID_mem_size),
+		.mem_signed(ID_mem_signed),
 		.illegal()
 	);
 
@@ -124,7 +127,8 @@ module main_cpu(
 	wire [2:0] ID_EX_funct3;
 	wire ID_EX_reg_write, ID_EX_mem_read, ID_EX_mem_write;
 	wire [1:0]  ID_EX_wb_sel;
-
+	wire [1:0]  ID_EX_mem_size;
+	wire ID_EX_mem_signed;
 	wire ID_EX_flush;
 	wire ID_EX_flush_final;
 	assign ID_EX_flush_final = ID_EX_flush | branch_flush;
@@ -169,6 +173,8 @@ module main_cpu(
 		.mem_write_in(ID_mem_write),
 		.wb_sel_in(ID_wb_sel),
 		.reg_write_in(ID_reg_write),
+		.mem_size_in(ID_mem_size),
+		.mem_signed_in(ID_mem_signed),
 
 		.pc_out(ID_EX_pc),
 		.rs1_data_out(ID_EX_rs1),
@@ -187,7 +193,9 @@ module main_cpu(
 		.mem_read_out(ID_EX_mem_read),
 		.mem_write_out(ID_EX_mem_write),
 		.wb_sel_out(ID_EX_wb_sel),
-		.reg_write_out(ID_EX_reg_write)
+		.reg_write_out(ID_EX_reg_write),
+		.mem_size_out(ID_EX_mem_size),
+		.mem_signed_out(ID_EX_mem_signed)
 	);
 
 
@@ -270,6 +278,8 @@ module main_cpu(
 	wire EX_MEM_taken, EX_MEM_is_branch, EX_MEM_is_jump;
 	wire EX_MEM_mem_read, EX_MEM_mem_write;
 	wire [1:0] EX_MEM_wb_sel;
+	wire[1:0] EX_MEM_mem_size;
+	wire EX_MEM_mem_signed;
 
 	wire EX_MEM_flush = 1'b0;
 	wire EX_MEM_write = 1'b1;
@@ -297,6 +307,8 @@ module main_cpu(
 		.wb_sel_in(ID_EX_wb_sel),
 		.reg_write_in(ID_EX_reg_write),
 		.rd_in(ID_EX_rd),
+		.mem_size_in(ID_EX_mem_size),
+		.mem_signed_in(ID_EX_mem_signed),
 
 		.pc_out(EX_MEM_pc),
 		.rs2_data_out(EX_MEM_rs2),
@@ -310,7 +322,9 @@ module main_cpu(
 		.mem_write_out(EX_MEM_mem_write),
 		.wb_sel_out(EX_MEM_wb_sel),
 		.reg_write_out(EX_MEM_reg_write),
-		.rd_out(EX_MEM_rd)
+		.rd_out(EX_MEM_rd),
+		.mem_size_out(EX_MEM_mem_size),
+		.mem_signed_out(EX_MEM_mem_signed)
 	);
 
 
@@ -326,6 +340,8 @@ module main_cpu(
 		.mem_write(EX_MEM_mem_write),
 		.alu_result(EX_MEM_alu),
 		.rs2_data(EX_MEM_rs2),
+		.mem_size(EX_MEM_mem_size),
+		.mem_signed(EX_MEM_mem_signed),
 		.mem_data_out(MEM_data_out)
 	);
 
@@ -336,6 +352,10 @@ module main_cpu(
 
 	wire [31:0] MEM_WB_alu, MEM_WB_mem;
 	wire [1:0]  MEM_WB_wb_sel;
+	wire MEM_WB_reg_write;
+	wire [4:0]  MEM_WB_rd;
+	wire [1:0] MEM_WB_mem_size;
+	wire MEM_WB_mem_signed;
 
 	wire MEM_WB_flush = 1'b0;
 	wire MEM_WB_write = 1'b1;
@@ -352,12 +372,16 @@ module main_cpu(
 		.wb_sel_in(EX_MEM_wb_sel),
 		.reg_write_in(EX_MEM_reg_write),
 		.rd_in(EX_MEM_rd),
+		.mem_size_in(EX_MEM_mem_size),
+		.mem_signed_in(EX_MEM_mem_signed),
 
 		.alu_result_out(MEM_WB_alu),
 		.mem_data_out(MEM_WB_mem),
 		.wb_sel_out(MEM_WB_wb_sel),
 		.reg_write_out(MEM_WB_reg_write),
-		.rd_out(MEM_WB_rd)
+		.rd_out(MEM_WB_rd),
+		.mem_size_out(MEM_WB_mem_size),
+		.mem_signed_out(MEM_WB_mem_signed)
 	);
 
 

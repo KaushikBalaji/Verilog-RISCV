@@ -19,6 +19,8 @@ module EX_MEM(
 	input is_jump_in,
 	input [31:0] branch_target_in,
 	input is_branch_taken_in,
+	input wire [1:0] mem_size_in,
+	input wire mem_signed_in,
 
 	output reg[31:0] pc_out,
 	output reg[31:0] alu_result_out,
@@ -33,11 +35,13 @@ module EX_MEM(
 	output reg is_branch_out,
 	output reg is_jump_out,
 	output reg[31:0] branch_target_out,
-	output reg is_branch_taken_out
+	output reg is_branch_taken_out,
+	output reg [1:0] mem_size_out,
+	output reg mem_signed_out
 );
 
 	always @(posedge clk) begin
-		if (reset) begin
+		if (reset || flush) begin
 			pc_out <= 32'b0;
 			alu_result_out <= 32'b0;
 			rs2_data_out <= 32'b0;
@@ -47,17 +51,12 @@ module EX_MEM(
 			is_jump_out <= 1'b0;
 			branch_target_out <= 32'b0;
 			is_branch_taken_out <= 1'b0;
-		end
-		else if (flush) begin
-			pc_out <= 32'b0;
-			alu_result_out <= 32'b0;
-			rs2_data_out <= 32'b0;
-			rd_out <= 5'b0;
-
-			is_branch_out <= 1'b0;
-			is_jump_out <= 1'b0;
-			branch_target_out <= 32'b0;
-			is_branch_taken_out <= 1'b0;
+			mem_read_out <= 1'b0;
+			mem_write_out <= 1'b0;
+			reg_write_out <= 1'b0;
+			wb_sel_out <= 2'b0;
+			mem_size_out <= 2'b0;
+			mem_signed_out <= 1'b0;
 		end
 		else if (write_enable) begin
 			pc_out <= pc_in;
@@ -74,6 +73,8 @@ module EX_MEM(
 			mem_write_out <= mem_write_in;
 			reg_write_out <= reg_write_in;
 			wb_sel_out <= wb_sel_in;
+			mem_size_out <= mem_size_in;
+			mem_signed_out <= mem_signed_in;
 		end
 		else begin
 			// stall, do nothing

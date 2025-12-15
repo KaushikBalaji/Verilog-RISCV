@@ -8,6 +8,8 @@ module MEM_top #(parameter mem_size = 2048)(
 	input wire[31:0] alu_result,
 	input wire[31:0] rs2_data,
 	input wire[1:0] wb_sel,
+	input wire[1:0] mem_size,
+	input wire mem_signed,
 
 	output wire[31:0] wb_data,
 	// For testing purpose
@@ -22,6 +24,8 @@ module MEM_top #(parameter mem_size = 2048)(
 		.mem_write(mem_write),
 		.addr(alu_result),
 		.write_data(rs2_data),
+		.mem_size(mem_size),
+		.mem_signed(mem_signed),
 		.mem_data_out(mem_read_data)
 	);
 

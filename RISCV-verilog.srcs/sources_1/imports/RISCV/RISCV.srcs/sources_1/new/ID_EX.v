@@ -24,6 +24,8 @@ module ID_EX(
 	input [4:0] rs1_in,
 	input [4:0] rs2_in,
 	input [4:0] rd_in,
+	input [1:0] mem_size_in,
+	input mem_signed_in,
 
 	output reg [31:0] pc_out,
 	output reg [31:0] rs1_data_out,
@@ -40,11 +42,13 @@ module ID_EX(
 	output reg reg_write_out,
 	output reg [4:0] rs1_out,
 	output reg [4:0] rs2_out,
-	output reg [4:0] rd_out
+	output reg [4:0] rd_out,
+	output reg [1:0] mem_size_out,
+	output reg mem_signed_out
 );
 
 	always @(posedge clk) begin
-		if (reset) begin
+		if (reset ) begin
 			pc_out <= 32'b0;
 			rs1_data_out <= 32'b0;
 			rs2_data_out <= 32'b0;
@@ -63,26 +67,9 @@ module ID_EX(
 			rs1_out <= 5'b0;
 			rs2_out <= 5'b0;
 			rd_out <= 5'b0;
-		end
-		else if (flush) begin
-			pc_out <= 32'b0;
-			rs1_data_out <= 32'b0;
-			rs2_data_out <= 32'b0;
-			alu_op_out <= 5'b0;
-			alu_src_out <= 1'b0;
-			is_branch_out <= 1'b0;
-			is_jump_out <= 1'b0;
-			funct3_out <= 3'b0;
-			imm_out <= 32'b0;
 
-			mem_read_out <= 1'b0;
-			mem_write_out <= 1'b0;
-			wb_sel_out <= 2'b0;
-			reg_write_out <= 1'b0;
-
-			rs1_out <= 5'b0;
-			rs2_out <= 5'b0;
-			rd_out <= 5'b0;
+			mem_size_out <= 2'b0;
+			mem_signed_out <= 1'b0;
 		end
 		else if (write_enable) begin
 			pc_out <= pc_in;
@@ -103,6 +90,9 @@ module ID_EX(
 			rs1_out <= rs1_in;
 			rs2_out <= rs2_in;
 			rd_out <= rd_in;
+
+			mem_size_out <= mem_size_in;
+			mem_signed_out <= mem_signed_in;
 		end
 		else begin
 			// stall, do nothing

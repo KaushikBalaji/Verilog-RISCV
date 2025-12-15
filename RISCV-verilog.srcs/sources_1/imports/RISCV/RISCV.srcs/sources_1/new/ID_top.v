@@ -9,7 +9,6 @@ module ID_top(
     	output wire [31:0] pc_out,
     	output wire [31:0] instr,
     	
-	// expose some decode outputs for checking
 	output wire [6:0]  opcode,
 	output wire [4:0]  rd,
 	output wire [4:0]  rs1,
@@ -29,7 +28,6 @@ module ID_top(
 	output wire[31:0] rs2_data
 );
 
-    // instantiate PC (uses your pc module)
 	pc u_pc (
 		.clk(clk),
 		.reset(reset),
@@ -38,13 +36,11 @@ module ID_top(
 		.pc_out(pc_out)
 	);
 
-    // instruction memory (your module)
 	instr_mem u_imem (
 		.addr(pc_out),
 		.instr(instr)
 	);
 
-    // instruction decoder (your module)
 	instr_decode u_decode (
 		.instr(instr),
 		.opcode(opcode),
