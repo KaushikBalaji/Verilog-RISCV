@@ -1,4 +1,5 @@
 `timescale 1ns / 1ps
+`include "data_size.vh"
 
 module data_mem (
 	input clk,
@@ -13,17 +14,20 @@ module data_mem (
 	reg[31:0] mem[0:2047];		// 32*mem_size bits memory
     
 	integer i;
-	initial begin
+	initial begin : print_mem
 		// pad addresses with zeros for mem not filled by the file .... this removes xxxx values
 		for (i = 0; i < 2048; i = i + 1) begin
 			mem[i] = 32'b0;
 		end
 
 		$display("Loading hex file ...DATA mem module");
-		$readmemh("2-prime_data_raw.hex", mem);
+		$readmemh("addi_data_raw.hex", mem);
+		$display("Loaded DATA_WORDS = %0d", `DATA_WORDS);
 		
 		$display("Finished loading hex. First words:");
-		for (i = 0; i < 5; i = i + 1) $display(" mem[%0d] = %08x", i, mem[i]);
+		for (i = 0; i < `DATA_WORDS + 1; i = i + 1) begin
+			$display(" mem[%0d] = %08x", i, mem[i]);
+		end
 	end
 
 	wire [7:0] word_pos = addr[9:2];

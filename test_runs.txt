@@ -1,0 +1,14 @@
+./create_hex.sh test-pgms/add_sub.s 
+./create_hex.sh test-pgms/addi.s 
+./create_hex.sh test-pgms/beq_taken.s 
+./create_hex.sh test-pgms/bne.s 
+./create_hex.sh test-pgms/fwd_ex.s 
+./create_hex.sh test-pgms/fwd_mem.s 
+./create_hex.sh test-pgms/blt_bge.s 
+./create_hex.sh test-pgms/jalr.s 
+./create_hex.sh test-pgms/jal.s 
+./create_hex.sh test-pgms/lb_lbu.s 
+./create_hex.sh test-pgms/lh_lhu.s 
+./create_hex.sh test-pgms/load_use.s 
+./create_hex.sh test-pgms/logic.s 
+./create_hex.sh test-pgms/lw_sw.s
