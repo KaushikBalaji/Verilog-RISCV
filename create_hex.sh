@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# ============================================================
+
 #   RISC-V HEX GENERATION SCRIPT (Verilog + Raw Hex formats)
-# ============================================================
+
 
 if [ $# -ne 1 ]; then
     echo "Usage: $0 <path/to/file.s>"
@@ -26,9 +26,9 @@ cp "$LINKER_SCRIPT" "$OUT_DIR/link.ld"
 
 cd "$OUT_DIR" || exit 1
 
-# ============================================================
-# Assemble + Link
-# ============================================================
+
+# Assembler + Linker
+
 
 echo "==> Assembling..."
 riscv-none-elf-as "${BASE_NAME}.s" -o "${BASE_NAME}.o"
@@ -36,9 +36,44 @@ riscv-none-elf-as "${BASE_NAME}.s" -o "${BASE_NAME}.o"
 echo "==> Linking..."
 riscv-none-elf-ld -T link.ld "${BASE_NAME}.o" -o "${BASE_NAME}.elf"
 
-# ============================================================
+
+# Add section sizes (for memory allocation in Verilog)
+
+echo "==> Section sizes:"
+riscv-none-elf-size -A "${BASE_NAME}.elf"
+
+INSTR_BYTES=$(riscv-none-elf-size -A "${BASE_NAME}.elf" | awk '$1==".text"{print $2}')
+DATA_BYTES=$(riscv-none-elf-size -A "${BASE_NAME}.elf" | awk '$1==".data"{print $2}')
+
+INSTR_WORDS=$((INSTR_BYTES / 4))
+DATA_WORDS=$((DATA_BYTES / 4))
+
+echo "INSTR_WORDS = ${INSTR_WORDS}"
+echo "DATA_WORDS = ${DATA_WORDS}"
+
+cat > instr_size.vh <<EOF
+\`ifndef INSTR_SIZE_VH
+\`define INSTR_SIZE_VH
+
+\`define INSTR_WORDS ${INSTR_WORDS}
+
+\`endif
+EOF
+
+cat > data_size.vh <<EOF
+\`ifndef DATA_SIZE_VH
+\`define DATA_SIZE_VH
+
+\`define DATA_WORDS ${DATA_WORDS}
+
+\`endif
+EOF
+
+
+
+
 # METHOD A — Verilog-format hex using objcopy
-# ============================================================
+
 
 echo "==> Generating instr.hex (Verilog)..."
 riscv-none-elf-objcopy -O verilog \
@@ -52,9 +87,9 @@ riscv-none-elf-objcopy -O verilog \
     --only-section=.data \
     "${BASE_NAME}.elf" ${BASE_NAME}_data.hex
 
-# ============================================================
+
 # METHOD B — Raw Hex (simple 32-bit words, simulator-safe)
-# ============================================================
+
 
 echo "==> Creating RAW hex from full binary..."
 
@@ -73,7 +108,7 @@ echo "==> data_raw.hex (raw binary ONLY .data)..."
 dd if="${BASE_NAME}.bin" bs=1 skip=$((0x1000)) status=none \
 | hexdump -ve '1/4 "%08x\n"' > ${BASE_NAME}_data_raw.hex
 
-# ============================================================
+
 
 echo "==> Completed!"
 echo "Generated files:"
